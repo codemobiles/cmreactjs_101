@@ -3,6 +3,7 @@ import React from "react";
 type Props = {
   label: string;
   btnLabel?: string;
+  onSubmit?: (result: string) => void;
 };
 
 // JSX
@@ -12,7 +13,13 @@ export default function MyComponent(props: Props) {
   return (
     <div>
       <hr />
-      <form onSubmit={() => alert(message)}>
+      <form
+        onSubmit={() => {
+          if (props.onSubmit) {
+            props.onSubmit(message);
+          }
+        }}
+      >
         <label>{props.label}: </label>
         <br />
         <input
