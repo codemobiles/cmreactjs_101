@@ -2,6 +2,7 @@ import React from "react";
 
 type Props = {
   label: string;
+  btnLabel?: string;
 };
 
 // JSX
@@ -14,7 +15,7 @@ export default function MyComponent(props: Props) {
         <br />
         <input type="text" name="your_message" id="your_message" />
         <br />
-        <button>Submit</button>
+        <button>{props.btnLabel ? props.btnLabel : "Ok"}</button>
       </form>
     </div>
   );
