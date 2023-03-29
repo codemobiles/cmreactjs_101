@@ -70,9 +70,12 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-type HeaderProps = {};
+type HeaderProps = {
+  open: boolean;
+  handleDrawerOpen: () => void;
+};
 
-export default function Header({ open, handleDrawerOpen }: any) {
+export default function Header({ open, handleDrawerOpen }: HeaderProps) {
   const theme = useTheme();
 
   return (
@@ -88,7 +91,7 @@ export default function Header({ open, handleDrawerOpen }: any) {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap component="div">
-          Persistent drawer
+          CodeMobiles
         </Typography>
       </Toolbar>
     </AppBar>
