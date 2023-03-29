@@ -1,4 +1,5 @@
 import React from "react";
+import BasicButtons from "./components/BasicButtons";
 import MyComponent from "./components/MyComponent";
 
 type Props = {};
@@ -22,6 +23,7 @@ export default function App({}: Props) {
   return (
     <div>
       <h3>App</h3>
+      <BasicButtons />
       <button onClick={handleUpdateClicked}>Update</button>
       <div>var1 = {var1}</div>
       <div>var2 = {var2}</div>
