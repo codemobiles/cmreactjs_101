@@ -18,8 +18,6 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-import Header from "./components/layout/Header";
-import Menu from "./components/layout/Menu";
 
 const drawerWidth = 240;
 
@@ -72,7 +70,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-export default function App() {
+export default function Header() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
 
@@ -85,14 +83,21 @@ export default function App() {
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <Header />
-      <Menu />
-      <Main open={open}>
-        <DrawerHeader />
-        <Typography>Content</Typography>
-      </Main>
-    </Box>
+    <AppBar position="fixed" open={open}>
+      <Toolbar>
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          onClick={handleDrawerOpen}
+          edge="start"
+          sx={{ mr: 2, ...(open && { display: "none" }) }}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Typography variant="h6" noWrap component="div">
+          Persistent drawer
+        </Typography>
+      </Toolbar>
+    </AppBar>
   );
 }
