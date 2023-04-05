@@ -103,8 +103,8 @@ export default function Menu({ open, handleDrawerClose }: MenuProps) {
       </DrawerHeader>
       <Divider />
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem key={text} disablePadding>
+        {["Login", "Register", "Stock", "Drafts"].map((text, index) => (
+          <ListItem key={text} disablePadding onClick={() => navigateTo(text)}>
             <ListItemButton>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
@@ -130,3 +130,7 @@ export default function Menu({ open, handleDrawerClose }: MenuProps) {
     </Drawer>
   );
 }
+
+const navigateTo = (text: string) => {
+  alert(text);
+};
