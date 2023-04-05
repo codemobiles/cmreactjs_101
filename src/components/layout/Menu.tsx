@@ -18,6 +18,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -77,6 +78,11 @@ type MenuProps = {
 
 export default function Menu({ open, handleDrawerClose }: MenuProps) {
   const theme = useTheme();
+  const navigate = useNavigate();
+
+  const navigateTo = (text: string) => {
+    navigate("/" + text.toLocaleLowerCase());
+  };
 
   return (
     <Drawer
@@ -130,7 +136,3 @@ export default function Menu({ open, handleDrawerClose }: MenuProps) {
     </Drawer>
   );
 }
-
-const navigateTo = (text: string) => {
-  alert(text);
-};
