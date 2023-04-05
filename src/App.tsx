@@ -22,6 +22,7 @@ import Header from "./components/layout/Header";
 import Menu from "./components/layout/Menu";
 import LoginPage from "./components/pages/LoginPage";
 import RegisterPage from "./components/pages/RegisterPage";
+import { Route, Routes } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -93,7 +94,9 @@ export default function App() {
       <Menu open={open} handleDrawerClose={handleDrawerClose} />
       <Main open={open}>
         <DrawerHeader />
-        <RegisterPage />
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+        </Routes>
       </Main>
     </Box>
   );
