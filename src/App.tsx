@@ -20,6 +20,8 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import Header from "./components/layout/Header";
 import Menu from "./components/layout/Menu";
+import LoginPage from "./components/pages/LoginPage";
+import RegisterPage from "./components/pages/RegisterPage";
 
 const drawerWidth = 240;
 
@@ -91,7 +93,7 @@ export default function App() {
       <Menu open={open} handleDrawerClose={handleDrawerClose} />
       <Main open={open}>
         <DrawerHeader />
-        <Typography>Content</Typography>
+        <RegisterPage />
       </Main>
     </Box>
   );
